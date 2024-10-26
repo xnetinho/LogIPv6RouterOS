@@ -1,6 +1,7 @@
 <?php
 /* Load file config */
-require("config.php");
+define('APP_INIT', true);
+require('config.php');
 
 /* Langage */
 if(isset($lang)){
