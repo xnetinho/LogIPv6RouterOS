@@ -16,6 +16,9 @@ RUN a2enmod env
 # Copiar a configuração customizada do Apache
 COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 
+# Habilitar a configuração do site
+RUN a2ensite 000-default.conf
+
 # Copia o código da aplicação para o diretório raiz do Apache
 COPY . /var/www/html/
 
