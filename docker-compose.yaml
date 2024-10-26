@@ -4,6 +4,7 @@ services:
   logsv6:
     image: xnetinho/logsv6:latest
     environment:
+      - TZ=America/Recife
       # Gere um token seguro em https://senhasegura.remontti.com.br
       - TOKEN=seu_token
       - LANG=pt-br
@@ -11,6 +12,8 @@ services:
       - DB_USER=logsv6
       - DB_PASSWORD=logsv6
       - DB_NAME=logsv6
+    # ports:
+    #  - 80:80
     deploy:
       mode: replicated
       replicas: 1
