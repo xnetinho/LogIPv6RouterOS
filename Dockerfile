@@ -11,6 +11,10 @@ RUN apt-get update && apt-get install -y \
 
 # Habilita módulos Apache, se necessário
 RUN a2enmod rewrite
+RUN a2enmod env
+
+# Copiar a configuração customizada do Apache
+COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 
 # Copia o código da aplicação para o diretório raiz do Apache
 COPY . /var/www/html/
